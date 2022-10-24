@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<FotoParduotuves>
+    <Parduotuve>
+        <Adresas>
+            <Gatve>Didlaukio g.</Gatve>
+            <Numeris>1</Numeris>
+            <Miestas>Vilnius</Miestas>
+            <Salis>Lietuva</Salis>
+            <PastoKodas>LT-01101</PastoKodas>
+        </Adresas>
+        <Prekes>
+            <Preke kategorija="kamera">
+                <Pavadinimas>Canon EOS 5D Mark III</Pavadinimas>
+                <Kaina valiuta="dol">2000.99</Kaina>
+                <Kiekis>10</Kiekis>
+            </Preke>
+            <Preke kategorija="kamera">
+                <Pavadinimas>Canon EOS 5D Mark IV</Pavadinimas>
+                <Kaina valiuta="eur">3000.99</Kaina>
+                <Kiekis>5</Kiekis>
+            </Preke>
+            <Preke kategorija="kamera">
+                <Pavadinimas>Canon EOS 6D Mark II</Pavadinimas>
+                <Kaina valiuta="eur">1500.99</Kaina>
+                <Kiekis>15</Kiekis>
+            </Preke>
+            <Preke kategorija="juosta" formatas="120">
+                <Pavadinimas>Kodak Gold 200</Pavadinimas>
+                <Kaina valiuta="eur">10.99</Kaina>
+                <Kiekis>100</Kiekis>
+                <ISO> 200</ISO>
+                <NaudotiIki>2022-12-31</NaudotiIki>
+            </Preke>
+            <Preke kategorija="juosta" formatas="35mm">
+                <Pavadinimas>Kodak Ultramax 400</Pavadinimas>
+                <Kaina valiuta="eur">10.99</Kaina>
+                <Kiekis>100</Kiekis>
+                <ISO> 400</ISO>
+                <NaudotiIki>2021-12-31</NaudotiIki>
+            </Preke>
+            <Preke kategorija="juosta" formatas="35mm">
+                <Pavadinimas>Kodak Portra 800</Pavadinimas>
+                <Kaina valiuta="dol">10.99</Kaina>
+                <Kiekis>100</Kiekis>
+                <ISO> 800</ISO>                <!-- nuo 50 iki 3200 -->
+                <NaudotiIki>2022-12-31</NaudotiIki>
+            </Preke>
+        </Prekes>
+        <Paslaugos>
+            <Paslauga>
+                <Pavadinimas>Portretas</Pavadinimas>
+                <Kaina valiuta="eur">3.99</Kaina>
+                <Aprasymas>Portretas su fotografu</Aprasymas>
+            </Paslauga>
+            <Paslauga>
+                <Pavadinimas>Šeimos nuotraukos</Pavadinimas>
+                <Kaina valiuta="eur">5.99</Kaina>
+                <Aprasymas>Šeimos nuotraukos su fotografu</Aprasymas>
+            </Paslauga>
+            <Paslauga>
+                <Pavadinimas>Fotojuostų ryskinimas</Pavadinimas>
+                <Kaina valiuta="eur">10.99</Kaina>
+                <Aprasymas>Fotojuostų ryskinimas  </Aprasymas>
+            </Paslauga>
+            <Paslauga>
+                <Pavadinimas>Juostų skenavimas</Pavadinimas>
+                <Kaina valiuta="eur">11.99</Kaina>
+                <Aprasymas>Fotojuostų skenavimas</Aprasymas>
+            </Paslauga>
+        </Paslaugos>
+        <Darbuotojai>
+            <Darbuotojas id="d1">
+                <Vardas>Jonas</Vardas>
+                <Pavarde>Jonaitis</Pavarde>
+                <GimimoData>1980-12-26</GimimoData>
+                <ElPastas> jonas.jonaitis@gmail.com </ElPastas>
+                <Telefonas> 8678787878 </Telefonas>
+                <Pareigos> Fotografas </Pareigos>
+            </Darbuotojas>
+            <Darbuotojas id="d2">
+                <Vardas>Petras</Vardas>
+                <Pavarde>Petraitis</Pavarde>
+                <GimimoData>1999-09-11</GimimoData>
+                <ElPastas> petras.petraitis@gmail.com </ElPastas>
+                <Telefonas> 860000000 </Telefonas>
+                <Pareigos> Pardavejas </Pareigos>
+            </Darbuotojas>
+            <Darbuotojas id="d3">
+                <Vardas>Antanas</Vardas>
+                <Pavarde>Antanaitis</Pavarde>
+                <GimimoData>1981-01-01</GimimoData>
+                <ElPastas> antanas.antanaitis@gmail.com </ElPastas>
+                <Telefonas> 8656565656 </Telefonas>
+                <Pareigos> Ryskinimo specialistas </Pareigos>
+            </Darbuotojas>
+        </Darbuotojai>
+    </Parduotuve>
+</FotoParduotuves>

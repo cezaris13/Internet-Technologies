@@ -1,0 +1,233 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "definitions": {
+        "valiuta": {
+            "type": "string",
+            "default": "EUR",
+            "pattern": "^[A-Za-z]{3}$"
+        }
+    },
+    "type": "object",
+    "properties": {
+        "FotoParduotuves": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "Adresas": {
+                        "type": "object",
+                        "properties": {
+                            "Gatve": {
+                                "type": "string"
+                            },
+                            "Numeris": {
+                                "type": "number"
+                            },
+                            "Miestas": {
+                                "type": "string"
+                            },
+                            "Salis": {
+                                "type": "string"
+                            },
+                            "PastoKodas": {
+                                "type": "string",
+                                "pattern": "^[A-Z]{2}-[0-9]{5}$"
+                            }
+                        },
+                        "required": [
+                            "Gatve",
+                            "Numeris",
+                            "Miestas",
+                            "Salis",
+                            "PastoKodas"
+                        ],
+                        "additionalProperties": false
+                    },
+                    "Prekes": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "anyOf": [
+                                {
+                                    "required": [
+                                        "Pavadinimas",
+                                        "Kaina",
+                                        "Kiekis",
+                                        "kategorija",
+                                        "Garantija"
+                                    ]
+                                },
+                                {
+                                    "required": [
+                                        "Pavadinimas",
+                                        "Kaina",
+                                        "Kiekis",
+                                        "kategorija",
+                                        "formatas",
+                                        "ISO",
+                                        "NaudotiIki"
+                                    ]
+                                }
+                            ],
+                            "properties": {
+                                "Pavadinimas": {
+                                    "type": "string"
+                                },
+                                "Kaina": {
+                                    "type": "number",
+                                    "minimum": 0
+                                },
+                                "Kiekis": {
+                                    "type": "number",
+                                    "minimum": 0,
+                                    "exclusiveMinimum": true
+                                },
+                                "kategorija": {
+                                    "type": "string"
+                                },
+                                "Garantija": {
+                                    "type": "string"
+                                },
+                                "valiuta": {
+                                    "$ref": "#/definitions/valiuta"
+                                },
+                                "NaudotiIki": {
+                                    "type": "string",
+                                    "format": "date"
+                                },
+                                "formatas": {
+                                    "type": "string",
+                                    "enum": [
+                                        "35mm",
+                                        "120"
+                                    ]
+                                },
+                                "ISO": {
+                                    "type": "number",
+                                    "minimum": 50,
+                                    "exclusiveMinimum": true
+                                }
+                            },
+                            "required": [
+                                "Pavadinimas",
+                                "Kaina",
+                                "Kiekis",
+                                "kategorija"
+                            ],
+                            "additionalProperties": false
+                        }
+                    },
+                    "Paslaugos": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "Pavadinimas": {
+                                    "type": "string"
+                                },
+                                "Kaina": {
+                                    "type": "number",
+                                    "minimum": 0
+                                },
+                                "valiuta": {
+                                    "$ref": "#/definitions/valiuta"
+                                },
+                                "Aprasymas": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "required": [
+                            "Pavadinimas",
+                            "Kaina"
+                        ],
+                        "additionalProperties": false
+                    },
+                    "Darbuotojai": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "id": {
+                                    "type": "string"
+                                },
+                                "Vardas": {
+                                    "type": "string"
+                                },
+                                "Pavarde": {
+                                    "type": "string"
+                                },
+                                "GimimoData": {
+                                    "type": "string",
+                                    "format": "date"
+                                },
+                                "ElPastas": {
+                                    "type": "string",
+                                    "format": "email"
+                                },
+                                "Telefonas": {
+                                    "type": "number"
+                                },
+                                "Pareigos": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "required": [
+                            "id",
+                            "Telefonas",
+                            "Pareigos",
+                            "Vardas",
+                            "Pavarde",
+                            "GimimoData"
+                        ],
+                        "additionalProperties": false
+                    },
+                    "Pardavimai": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "id": {
+                                    "type": "string"
+                                },
+                                "PrekesID": {
+                                    "type": "string"
+                                },
+                                "DarbuotojoId": {
+                                    "type": "string"
+                                },
+                                "PardavimoData": {
+                                    "type": "string",
+                                    "format": "date"
+                                }
+                            }
+                        }
+                    },
+                    "Atsiliepimai": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "Klientas": {
+                                    "type": "string"
+                                },
+                                "Komentaras": {
+                                    "type": "string"
+                                },
+                                "Vertinimas": {
+                                    "type": "number",
+                                    "minimum": 1,
+                                    "maximum": 10
+                                },
+                                "Aprasas": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

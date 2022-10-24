@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="https://www.fotofoto.lt/"
+    xmlns:ft="https://www.fotofoto.lt/" elementFormDefault="qualified">
+    <xs:element name="FotoParduotuves">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="Parduotuve" type="ft:ParduotuveData" />
+            </xs:sequence>
+        </xs:complexType>
+        <xs:key name="DarbuotojoIdRaktas">
+            <xs:selector xpath="ft:Parduotuve/ft:Darbuotojai/ft:Darbuotojas" />
+            <xs:field xpath="@id" />
+        </xs:key>
+
+        <xs:key name="PrekesIdRaktas">
+            <xs:selector xpath="ft:Parduotuve/ft:Prekes/ft:Preke" />
+            <xs:field xpath="@id" />
+        </xs:key>
+
+        <xs:key name="PardavimoIdRaktas">
+            <xs:selector xpath="ft:Parduotuve/ft:Pardavimai/ft:Pardavimas" />
+            <xs:field xpath="@id" />
+        </xs:key>
+
+        <xs:key name="AtsiliepimoIdRaktas">
+            <xs:selector xpath="ft:Parduotuve/ft:Atsiliepimai/ft:Atsiliepimas" />
+            <xs:field xpath="@id" />
+        </xs:key>
+
+        <xs:keyref name="PardavimoDarbuotojoId" refer="ft:DarbuotojoIdRaktas">
+            <xs:selector xpath="ft:Parduotuve/ft:Pardavimai/ft:Pardavimas/ft:Aptarnauta"/>
+            <xs:field xpath="@darbuotojoId"/>
+        </xs:keyref>
+
+        <xs:keyref name="PardavimoPrekesId" refer="ft:PrekesIdRaktas">
+            <xs:selector xpath="ft:Parduotuve/ft:Pardavimai/ft:Pardavimas/ft:Preke"/>
+            <xs:field xpath="@prekesId"/>
+        </xs:keyref>
+    </xs:element>
+
+    <xs:complexType name="ParduotuveData">
+        <xs:sequence>
+            <xs:element name="Adresas" type="ft:AdressData" />
+            <xs:element name="Prekes">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="Preke" minOccurs="0" maxOccurs="unbounded" type="ft:PrekeData" />
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="Paslaugos">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="Paslauga" minOccurs="0" maxOccurs="unbounded" type="ft:PaslaugaData" />
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="Darbuotojai">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="Darbuotojas" minOccurs="0" maxOccurs="unbounded" type="ft:darbuotojoInformacija"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="Pardavimai">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="Pardavimas" minOccurs="0" maxOccurs="unbounded" type="ft:PardavimasData" />
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="Atsiliepimai">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="Atsiliepimas" minOccurs="0" maxOccurs="unbounded" type="ft:AtsiliepimasData" />
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <!-- adress data-->
+    <xs:complexType name="AdressData">
+        <xs:sequence>
+            <xs:element name="Gatve" type="xs:string" />
+            <xs:element name="Numeris" type="xs:integer" />
+            <xs:element name="Miestas" type="xs:string" />
+            <xs:element name="Salis" type="xs:string" />
+            <xs:element name="PastoKodas" type="xs:string" />
+        </xs:sequence>
+    </xs:complexType>
+    <!-- prekes data-->
+    <xs:complexType name="PrekeData">
+        <xs:complexContent>
+            <xs:extension base="ft:PrekesData">
+                <xs:sequence>
+                    <xs:element name="Kiekis" type="xs:integer" minOccurs="1" maxOccurs="1" />
+                </xs:sequence>
+                <xs:attribute name="id" type="xs:string" />
+                <xs:attribute name="kategorija" type="xs:string" use="required" />
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:simpleType name="isoList">
+        <xs:list itemType="ft:isoData"/>
+    </xs:simpleType>
+
+    <xs:simpleType name="isoData">
+        <xs:restriction base="xs:integer">
+            <xs:minInclusive value="50" />
+            <xs:maxInclusive value="3200" />
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="JuostosFormatas">
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1"></xs:minLength>
+            <xs:maxLength value="10"></xs:maxLength>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="formatData">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="35mm" />
+            <xs:enumeration value="120" />
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="garantija">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[0-9]*\s*(men|menesiai|met|metai).?"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:complexType name="DaiktoInformacija">
+        <xs:sequence>
+            <xs:element name="Pavadinimas" type="xs:string" minOccurs="1" />
+            <xs:element name="Kaina" type="ft:kainosData" />
+            <xs:choice minOccurs="1">
+                <xs:sequence minOccurs="1">
+                    <xs:element name="ISO" type="ft:isoList" minOccurs="0" />
+                    <xs:element name="Formatas" type="ft:formatData" minOccurs="0" />
+                    <xs:element name="NaudotiIki" type="xs:date" minOccurs="0" />
+                </xs:sequence>
+                <xs:element name="Garantija" type="ft:garantija" minOccurs="0" />
+            </xs:choice>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="kainosData">
+        <xs:simpleContent>
+            <xs:extension base="ft:KainosKiekis">
+                <xs:attribute name="valiuta" type="xs:string" default="EUR" />
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+
+    <xs:simpleType name="KainosKiekis">
+        <xs:restriction base="xs:decimal">
+            <xs:minInclusive value="0"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:complexType name="PrekesData">
+        <xs:complexContent>
+            <xs:restriction base="ft:DaiktoInformacija">
+                <xs:sequence>
+                    <xs:element name="Pavadinimas" type="xs:string" minOccurs="1" />
+                    <xs:element name="Kaina" type="ft:kainosData" />
+                    <xs:choice>
+                        <xs:sequence>
+                            <xs:element name="ISO" type="ft:isoList" minOccurs="1" />
+                            <xs:element name="Formatas" type="ft:formatData" minOccurs="1" />
+                            <xs:element name="NaudotiIki" type="xs:date" minOccurs="1" />
+                        </xs:sequence>
+                        <xs:element name="Garantija" type="ft:garantija" minOccurs="1" />
+                    </xs:choice>
+                </xs:sequence>
+            </xs:restriction>
+        </xs:complexContent>
+    </xs:complexType>
+    <!-- paslaugos informacija-->
+    <xs:complexType name="PaslaugaData">
+        <xs:complexContent>
+            <xs:extension base="ft:DaiktoInformacija">
+                <xs:sequence>
+                    <xs:element name="Aprasymas" type="xs:string" />
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+
+    <!-- Darbuotojai-->
+    <xs:complexType name="darbuotojoInformacija">
+        <xs:sequence>
+            <xs:element name="Vardas" type="xs:string" />
+            <xs:element name="Pavarde" type="xs:string" />
+            <xs:element name="GimimoData" type="xs:date" />
+            <xs:element name="ElPastas" type="xs:string" />
+            <xs:element name="Telefonas" type="xs:string" />
+            <xs:element name="Pareigos" type="xs:string" />
+        </xs:sequence>
+        <xs:attribute name="id" type="xs:string" use="required" />
+    </xs:complexType>
+    <!-- pardavimai-->
+    <xs:complexType name="PardavimasData">
+        <xs:sequence>
+            <xs:element name="Preke" type="ft:PrekeRefData" />
+            <xs:element name="Aptarnauta" type="ft:darbuotojoRefData" />
+            <xs:element name="PardavimoData" type="xs:date" />
+        </xs:sequence>
+        <xs:attribute name="id" type="xs:string" use="required" />
+    </xs:complexType>
+
+    <xs:complexType name="PrekeRefData">
+        <xs:simpleContent>
+            <xs:extension base="xs:string">
+                <xs:attribute name="prekesId" type="xs:string" use="required" />
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+
+    <xs:complexType name="darbuotojoRefData">
+        <xs:simpleContent>
+            <xs:extension base="xs:string">
+                <xs:attribute name="darbuotojoId" type="xs:string" use="required" />
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+    <!-- atsiliepimai-->
+    <xs:complexType name="AtsiliepimasData">
+        <xs:sequence>
+            <xs:element name="Klientas" type="xs:string" />
+            <xs:element name="Komentaras" type="xs:string" />
+            <xs:element name="Vertinimas" type="xs:integer" />
+            <xs:element name="Aprasas" type="ft:AprasoData"/>
+        </xs:sequence>
+        <xs:attribute name="id" type="xs:string" use="required" />
+    </xs:complexType>
+
+    <xs:complexType name="AprasoData" mixed="true">
+        <xs:complexContent>
+            <xs:extension base="ft:DaiktoInformacija"/>
+        </xs:complexContent>
+    </xs:complexType>
+</xs:schema>

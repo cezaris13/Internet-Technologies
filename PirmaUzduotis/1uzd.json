@@ -1,0 +1,151 @@
+{
+  "FotoParduotuves": [
+    {
+      "Adresas": {
+        "Gatve": "Didlaukio g.",
+        "Numeris": 1,
+        "Miestas": "Vilnius",
+        "Salis": "Lietuva",
+        "PastoKodas": "LT-01101"
+      },
+      "Prekes": [
+        {
+          "kategorija": "kamera",
+          "Pavadinimas": "Canon EOS 5D Mark III",
+          "Kaina": 2000.99,
+          "valiuta": "dol",
+          "Garantija": "24men",
+          "Kiekis": 10
+        },
+        {
+          "kategorija": "kamera",
+          "Pavadinimas": "Canon EOS 5D Mark IV",
+          "Kaina": 3000.99,
+          "valiuta": "eur",
+          "Garantija": "24men",
+          "Kiekis": 5
+        },
+        {
+          "kategorija": "kamera",
+          "Pavadinimas": "Canon EOS 6D Mark II",
+          "Kaina": 1500.99,
+          "valiuta": "eur",
+          "Garantija": "24men",
+          "Kiekis": 15
+        },
+        {
+          "kategorija": "juosta",
+          "formatas": "120",
+          "Pavadinimas": "Kodak Gold 200",
+          "Kaina": 10.99,
+          "valiuta": "eur",
+          "Kiekis": 100,
+          "ISO": 200,
+          "NaudotiIki": "2022-12-31"
+        },
+        {
+          "kategorija": "juosta",
+          "formatas": "35mm",
+          "Pavadinimas": "Kodak Ultramax 400",
+          "Kaina": 10.99,
+          "Kiekis": 100,
+          "valiuta": "eur",
+          "ISO": 400,
+          "NaudotiIki": "2021-12-31"
+        },
+        {
+          "kategorija": "juosta",
+          "formatas": "35mm",
+          "Pavadinimas": "Kodak Portra 800",
+          "Kaina": 10.99,
+          "valiuta": "dol",
+          "Kiekis": 100,
+          "ISO": 800,
+          "NaudotiIki": "2022-12-31"
+        }
+      ],
+      "Paslaugos": [
+        {
+          "Pavadinimas": "Portretas",
+          "Kaina": 3.99,
+          "valiuta": "eur",
+          "Aprasymas": "Portretas su fotografu"
+        },
+        {
+          "Pavadinimas": "Šeimos nuotraukos",
+          "Kaina": 5.99,
+          "valiuta": "eur",
+          "Aprasymas": "Šeimos nuotraukos su fotografu"
+        },
+        {
+          "Pavadinimas": "Fotojuostų ryskinimas",
+          "Kaina": 10.99,
+          "Aprasymas": "Fotojuostų ryskinimas"
+        },
+        {
+          "Pavadinimas": "Juostų skenavimas",
+          "Kaina": 11.99,
+          "valiuta": "eur",
+          "Aprasymas": "Fotojuostų skenavimas"
+        }
+      ],
+      "Darbuotojai": [
+        {
+          "id": "d1",
+          "Vardas": "Jonas",
+          "Pavarde": "Jonaitis",
+          "GimimoData": "1980-12-26",
+          "ElPastas": "jonas.jonaitis@gmail.com",
+          "Telefonas": 8678787878,
+          "Pareigos": "Fotografas"
+        },
+        {
+          "id": "d2",
+          "Vardas": "Petras",
+          "Pavarde": "Petraitis",
+          "GimimoData": "1999-09-11",
+          "ElPastas": "petras.petraitis@gmail.com",
+          "Telefonas": 860000000,
+          "Pareigos": "Pardavejas"
+        },
+        {
+          "id": "d3",
+          "Vardas": "Antanas",
+          "Pavarde": "Antanaitis",
+          "GimimoData": "1981-01-01",
+          "ElPastas": "antanas.antanaitis@gmail.com",
+          "Telefonas": 8656565656,
+          "Pareigos": "Ryskinimo specialistas"
+        }
+      ],
+      "Pardavimai": [
+        {
+          "id": "p1",
+          "PrekesID": "pr1",
+          "DarbuotojoId": "d1",
+          "PardavimoData": "2019-12-31"
+        },
+        {
+          "id": "p2",
+          "PrekesID": "pr2",
+          "DarbuotojoId": "d2",
+          "PardavimoData": "2019-12-31"
+        },
+        {
+          "id": "p3",
+          "PrekesID": "pr3",
+          "DarbuotojoId": "d3",
+          "PardavimoData": "2019-12-31"
+        }
+      ],
+      "Atsiliepimai": [
+        {
+          "Klientas": "Jonas",
+          "Komentaras": "Geras paslaugų kokybės santykis",
+          "Vertinimas": 10,
+          "Aprasas": " Pirkau Canon EOD 5D Mark IV už 1550.99, kolkas niekuo nesiskundžiu."
+        }
+      ]
+    }
+  ]
+}
