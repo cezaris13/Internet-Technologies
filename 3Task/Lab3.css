@@ -1,0 +1,92 @@
+body {
+    background-color: peru;
+}
+
+@media only screen and (max-width: 800px) {
+    body {
+        background-color: #e0e0d1;
+    }
+}
+
+h1, h2, p {
+    text-align: center;
+}
+
+h1 em {
+    font-style: italic;
+    color: darkslateblue;
+}
+
+h2 { 
+    color : red;
+}
+
+table {
+    text-align: center;
+    border: 1px dashed darkblue;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+thead {
+    text-align: center;
+    border: 2px dashed greenyellow !important;
+}
+
+th,
+td {
+    border: 1px solid black;
+}
+
+section {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+[paragrafas="juostu-aprasas"] {
+    font-weight: bold;
+    color: darkgrey;
+}
+
+article > [paragrafas="filmu-juostines-kameros"] {
+    font-style: italic;
+}
+
+#N1 {
+    color: red;
+}
+
+.nuotrauka {
+    text-align: center;
+}
+
+.sarasas { 
+    text-align: center;
+}
+
+.sarasas > ul {
+    display: inline-block;
+    text-align: left;
+}
+
+.forma {
+    text-align: center;
+}
+
+.forma > form { 
+    display: inline-block;
+    text-align: left;
+}
+
+.paveikslelis { 
+    width: 400px;
+    height: 240px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.paveikslelis img {
+    width: 100%;
+    height: auto;
+}
