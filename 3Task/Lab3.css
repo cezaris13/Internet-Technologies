@@ -23,14 +23,19 @@ h2 {
 
 table {
     text-align: center;
-    border: 1px dashed darkblue;
+    border-style: dashed;
     margin-left: auto;
     margin-right: auto;
+    border-collapse: collapse;
 }
 
-thead {
+table > tbody{
+    border: 2px dotted green;
+}
+
+table > tbody > tr {
     text-align: center;
-    border: 2px dashed greenyellow !important;
+    border: inherit;
 }
 
 th,
@@ -43,12 +48,12 @@ section {
     margin-right: auto;
 }
 
-[paragrafas="juostu-aprasas"] {
+[data-paragrafas="juostu-aprasas"] {
     font-weight: bold;
     color: darkgrey;
 }
 
-article > [paragrafas="filmu-juostines-kameros"] {
+section > [data-paragrafas="filmu-juostines-kameros"] {
     font-style: italic;
 }
 
@@ -90,3 +95,16 @@ article > [paragrafas="filmu-juostines-kameros"] {
     width: 100%;
     height: auto;
 }
+
+ul > li { 
+    color: darkred;
+}
+
+li { 
+    /* color: darkorange; */
+    color: aqua !important
+ }
+
+ header { 
+    text-align: center;
+ }
