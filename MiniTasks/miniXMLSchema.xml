@@ -1,0 +1,21 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="https://www.fotofoto.lt/" elementFormDefault="qualified">
+    <xs:element name="Kompiuteris">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="Programa" minOccurs="0" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="Pavadinimas" type="xs:string" />
+                            <xs:element name="Versija" type="xs:integer" />
+                            <xs:element name="Aprasymas" type="xs:string" />
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+        <xs:key name="ProgramuPavadinimuUnikalumas">
+            <xs:selector xpath="Programa" />
+            <xs:field xpath="Pavadinimas" />
+        </xs:key>
+    </xs:element>
+</xs:schema>

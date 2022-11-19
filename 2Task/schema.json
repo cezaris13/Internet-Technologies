@@ -50,19 +50,11 @@
                             "anyOf": [
                                 {
                                     "required": [
-                                        "Pavadinimas",
-                                        "Kaina",
-                                        "Kiekis",
-                                        "kategorija",
                                         "Garantija"
                                     ]
                                 },
                                 {
                                     "required": [
-                                        "Pavadinimas",
-                                        "Kaina",
-                                        "Kiekis",
-                                        "kategorija",
                                         "formatas",
                                         "ISO",
                                         "NaudotiIki"

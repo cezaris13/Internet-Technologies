@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<FotoParduotuves>
+<FotoParduotuves xmlns="https://www.fotofoto.lt/" xsi:schemaLocation="https://www.fotofoto.lt/ ../2Task/schema.xml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <Parduotuve>
         <Adresas>
             <Gatve>Didlaukio g.</Gatve>
@@ -10,41 +10,55 @@
             <PastoKodas>LT-01101</PastoKodas>
         </Adresas>
         <Prekes>
-            <Preke kategorija="kamera">
+            <Preke kategorija="kamera" id="pr1">
                 <Pavadinimas>Canon EOS 5D Mark III</Pavadinimas>
                 <Kaina valiuta="dol">2000.99</Kaina>
+                <Garantija>24 men</Garantija>
                 <Kiekis>10</Kiekis>
             </Preke>
-            <Preke kategorija="kamera">
+            <Preke kategorija="kamera" id="pr2">
                 <Pavadinimas>Canon EOS 5D Mark IV</Pavadinimas>
                 <Kaina valiuta="eur">3000.99</Kaina>
+                <Garantija>24 men.</Garantija>
                 <Kiekis>5</Kiekis>
             </Preke>
-            <Preke kategorija="kamera">
+            <Preke kategorija="kamera" id="pr3">
                 <Pavadinimas>Canon EOS 6D Mark II</Pavadinimas>
                 <Kaina valiuta="eur">1500.99</Kaina>
+                <Garantija>24met</Garantija>
                 <Kiekis>15</Kiekis>
             </Preke>
-            <Preke kategorija="juosta" formatas="120">
+            <Preke kategorija="juosta" id="pr4">
                 <Pavadinimas>Kodak Gold 200</Pavadinimas>
                 <Kaina valiuta="eur">10.99</Kaina>
-                <Kiekis>100</Kiekis>
                 <ISO> 200</ISO>
+                <Formatas>120</Formatas>
                 <NaudotiIki>2022-12-31</NaudotiIki>
+                <Kiekis>100</Kiekis>
             </Preke>
-            <Preke kategorija="juosta" formatas="35mm">
+            <Preke kategorija="juosta" id="pr5">
                 <Pavadinimas>Kodak Ultramax 400</Pavadinimas>
                 <Kaina valiuta="eur">10.99</Kaina>
-                <Kiekis>100</Kiekis>
                 <ISO> 400</ISO>
+                <Formatas>35mm</Formatas>
                 <NaudotiIki>2021-12-31</NaudotiIki>
+                <Kiekis>100</Kiekis>
             </Preke>
-            <Preke kategorija="juosta" formatas="35mm">
+            <Preke kategorija="juosta" id="pr6">
                 <Pavadinimas>Kodak Portra 800</Pavadinimas>
                 <Kaina valiuta="dol">10.99</Kaina>
-                <Kiekis>100</Kiekis>
-                <ISO> 800</ISO>                <!-- nuo 50 iki 3200 -->
+                <ISO>800</ISO>
+                <Formatas>35mm</Formatas>
                 <NaudotiIki>2022-12-31</NaudotiIki>
+                <Kiekis>100</Kiekis>
+            </Preke>
+            <Preke kategorija="juosta" id="pr7">
+                <Pavadinimas>Lomo metropolis</Pavadinimas>
+                <Kaina valiuta="dol">10.99</Kaina>
+                <ISO>100 200 400</ISO> 
+                <Formatas>35mm</Formatas>
+                <NaudotiIki>2022-12-31</NaudotiIki>
+                <Kiekis>100</Kiekis>
             </Preke>
         </Prekes>
         <Paslaugos>
@@ -95,5 +109,33 @@
                 <Pareigos> Ryskinimo specialistas </Pareigos>
             </Darbuotojas>
         </Darbuotojai>
+        <Pardavimai>
+            <Pardavimas id="p1">
+                <Preke prekesId="pr1" />
+                <Aptarnauta darbuotojoId="d1" />
+                <PardavimoData>2019-01-01</PardavimoData>
+            </Pardavimas>
+            <Pardavimas id="p2">
+                <Preke prekesId="pr3"/>
+                <Aptarnauta darbuotojoId="d2" />
+                <PardavimoData>2019-02-01</PardavimoData>
+            </Pardavimas>
+            <Pardavimas id="p3">
+                <Preke prekesId="pr2" />
+                <Aptarnauta darbuotojoId="d3" />
+                <PardavimoData>2022-01-01</PardavimoData>
+            </Pardavimas>
+        </Pardavimai>
+        <Atsiliepimai>
+            <Atsiliepimas id="a1">
+                <Klientas>Jonas</Klientas>
+                <Komentaras>Labai patiko</Komentaras>
+                <Vertinimas>10</Vertinimas>
+                <Aprasas> 
+                    Pirkau <Pavadinimas> Canon EOD 5D Mark IV</Pavadinimas>
+                    už <Kaina> 1550.99</Kaina>, kolkas niekuo nesiskundžiu.
+                </Aprasas>
+            </Atsiliepimas>
+        </Atsiliepimai>
     </Parduotuve>
 </FotoParduotuves>

@@ -1,0 +1,17 @@
+<Kompiuteris>
+    <Programa>
+        <Pavadinimas>Ms Word</Pavadinimas>
+        <Versija>10</Versija>
+        <Aprasymas>Programa skirta dokumentu redagavimui</Aprasymas>
+    </Programa>
+    <Programa>
+        <Pavadinimas>Ms Excel</Pavadinimas>
+        <Versija>5</Versija>
+        <Aprasymas>Programa skirta skaičiavimams</Aprasymas>
+    </Programa>
+    <Programa>
+        <Pavadinimas>Ms Power Point</Pavadinimas>
+        <Versija>3</Versija>
+        <Aprasymas>Programa skirta prezentacijoms</Aprasymas>
+    </Programa>
+</Kompiuteris>

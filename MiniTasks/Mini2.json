@@ -1,0 +1,21 @@
+{   
+    "Kompiuteris":{
+        "Programos":[
+            {
+                "pavadinimas": "Word",
+                "versija": "2016",
+                "aprasymas": "teksto redagavimas"
+            },
+            {
+                "pavadinimas": "Excel",
+                "versija": "2016",
+                "aprasymas": "skaičių lentelių redagavimas"
+            },
+            {
+                "pavadinimas": "PowerPoint",
+                "versija": "2016",
+                "aprasymas": "prezentacijų kūrimas"
+            },
+        ]
+    }
+}

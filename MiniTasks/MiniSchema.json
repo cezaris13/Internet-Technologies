@@ -1,0 +1,20 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type":"object",
+    "properties": {
+        "Kompiuteris":{
+            "type":"object",
+            "properties": {
+                "type":"array",
+                "items": {
+                    "type":"object",
+                    "properties": {
+                        "pavadinimas":{"type":"string"},
+                        "versija":{"type":"int"},
+                        "aprasymas":{"type":"string"},
+                    }
+                }
+            }
+        }
+    }   
+}

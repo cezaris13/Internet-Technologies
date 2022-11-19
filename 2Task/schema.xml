@@ -89,7 +89,7 @@
         </xs:sequence>
     </xs:complexType>
     <!-- prekes data-->
-    <xs:complexType name="PrekeData">
+    <xs:complexType name="PrekeData" mixed="true">
         <xs:complexContent>
             <xs:extension base="ft:PrekesData">
                 <xs:sequence>
@@ -120,7 +120,7 @@
     </xs:simpleType>
 
     <xs:simpleType name="formatData">
-        <xs:restriction base="xs:string">
+        <xs:restriction base="ft:JuostosFormatas">
             <xs:enumeration value="35mm" />
             <xs:enumeration value="120" />
         </xs:restriction>
@@ -132,7 +132,7 @@
         </xs:restriction>
     </xs:simpleType>
 
-    <xs:complexType name="DaiktoInformacija">
+    <xs:complexType name="DaiktoInformacija" mixed="true">
         <xs:sequence>
             <xs:element name="Pavadinimas" type="xs:string" minOccurs="1" />
             <xs:element name="Kaina" type="ft:kainosData" />
@@ -161,7 +161,7 @@
         </xs:restriction>
     </xs:simpleType>
 
-    <xs:complexType name="PrekesData">
+    <xs:complexType name="PrekesData" mixed="true">
         <xs:complexContent>
             <xs:restriction base="ft:DaiktoInformacija">
                 <xs:sequence>
@@ -180,7 +180,7 @@
         </xs:complexContent>
     </xs:complexType>
     <!-- paslaugos informacija-->
-    <xs:complexType name="PaslaugaData">
+    <xs:complexType name="PaslaugaData" mixed="true">
         <xs:complexContent>
             <xs:extension base="ft:DaiktoInformacija">
                 <xs:sequence>
