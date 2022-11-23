@@ -102,7 +102,14 @@
             <form name="forma" action="rezultatas.html" method="post">
                 Vardas: <input type="text" name="vardas" /><br />
                 Pavardė: <input type="text" name="pavarde" /><br />
-                Pašto adresas: <input type="text" name="email" required /><br />
+                Pašto adresas: <input type="email" name="email" required /><br />
+                Kiekis <input type="number" name="kiekis" min="1" max="100" /><br />
+                Data <input type="date" name="data" /><br />
+                Palikti Išryskintą juostą:
+                <input type="radio" id="yes" name="juosta" value="yes">
+                <label for="yes">taip</label>
+                <input type="radio" id="no" name="juosta" value="no">
+                <label for="no">ne</label><br>
                 <label>
                     Pasirinkite ryškinimo būdą:
                     <select size="1" name="Registracija ryskinimui">
@@ -124,7 +131,7 @@
     <footer>
         <p>© 2019 Fotofoto.lt
             <br />
-            <a href="https://www.foto.lt">nuoroda į fotofoto puslapį</a>
+            <a href="https://www.fotofoto.lt">nuoroda į fotofoto puslapį</a>
         </p>
         <p>
             Atliko darbą: Pijus Petkevičius

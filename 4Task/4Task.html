@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>4Task</title>
+    <script src="4Task.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"> </script>
+</head>
+
+<body>
+    <h1>4Task</h1>
+    <!-- add form with required field, date, positive integer and a table-->
+    <form action="#" onsubmit="return submitData()" method="post">
+        <label for="name">Vardas, pavarde:</label>
+        <input type="text" name="name" id="name"> <br />
+        <label for="email">El.Pastas:</label>
+        <input type="email" id="email" name="email" required> <br />
+        <label for="date">Data:</label>
+        <input type="text" name="date" id="date" placeholder="MMMM-mm-dd" required><br />
+        <label for="number">Juostu kiekis:</label>
+        <input type="number" name="number" id="number"><br />
+        <input type="submit" value="Submit">
+    </form>
+    <!-- add some kind of list which visibility can be toggled with a button-->
+    <button onclick="return toggleList()">Paslepti/Rodyti</button>
+    <ul class="toggle-list">
+        <li>kodak gold 200</li>
+        <li> kodak ultramax 400</li>
+        <li> kodak portra 160</li>
+        <li> kodak portra 400</li>
+        <li> kodak portra 800</li>
+    </ul>
+    <h2> pakeisti paragrafų spalvą</h2>
+    <button onclick="return toggleStyle()">Pakeisti paragrafų spalvą</button>
+    <h2>Ištrinti paragrafą</h2>
+    <label>Paragrafo nr:</label>
+    <input type="number" name="paragraph" id="paragraph" class="-remove-paragraph-number" placeholder="paragrafo nr.">
+    <br />
+    <button onclick="return removeParagraph()">Ištrinti paragrafą</button>
+
+    <h2>Pridėti paragrafą</h2>
+    <label>Paragrafo tekstas:</label>
+    <input type="text" name="paragraph" id="paragraph" class="add-paragraph-text"
+        placeholder="įveskite paragrafo tekstą"> <br />
+    <button onclick="return addParagraph()">Pridėti paragrafą</button>
+
+    <h2>Pakeisti paragrafą</h2>
+    <label>Paragrafo tekstas:</label>
+    <input type="text" name="paragraph" id="paragraph" class="edit-paragraph-text" placeholder="paragrafo tekstas">
+    <br />
+    <label>Paragrafo nr:</label>
+    <input type="number" name="paragraph" id="paragraph" class="edit-paragraph-number" placeholder="paragrafo nr.">
+    <br />
+    <button onclick="return editParagraph()">Pakeisti paragrafą</button>
+    <h2>Paragrafai</h2>
+    <div class="paragraph-list">
+        <p>
+            1 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nisl nec ultricies lacinia, nunc
+            nisl
+        </p>
+        <p>
+            2 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nisl nec ultricies lacinia, nunc
+            nisl
+        </p>
+        <p>
+            3 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nisl nec ultricies lacinia, nunc
+            nisl
+        </p>
+    </div>
+
+    <div class="people">
+        <h2>Pridėti žmogų</h2>
+        <label>Žmogaus vardas:</label>
+        <input type="text" name="paragraph" id="paragraph" class="add-human" placeholder="įveskite žmogaus vardą">
+        <br />
+        <button onclick="return addPerson()">Pridėti žmogų</button>
+    </div>
+    <h2> Žmonių sąrašas</h2>
+    <ul class="people-list">
+    </ul>
+
+    <button onclick="return sendRequest()">Siųsti užklausą</button>
+
+    <h2>Gauta iš serverio informacija</h2>
+    <table class="server-response-table">
+        <tr>
+            <th> no.</th>
+            <th> vardas</th>
+        </tr>
+        <tr>
+            <td> 1</td>
+            <td id="name">test</td>
+        </tr>
+    </table>
+</body>
+
+</html>
