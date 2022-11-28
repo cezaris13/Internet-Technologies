@@ -5,7 +5,7 @@ function submitData() {
 
 function validateData() {
     let number = document.getElementById("number").value;
-    checkIfIn(number, "juostu kiekis negali buti mazesnis uz 0");
+    checkIfInt(number, "juostu kiekis negali buti mazesnis uz 0");
 
     let dateValue = document.getElementById("date").value;
     const date = dateValue.split("-");
@@ -125,10 +125,10 @@ function sendRequest() {
             "Content-Type": "application/json"
         },
         data: JSON.stringify(jsonOfPeople),
-        success: function (data) {
+        success: function (data, _textStatus, request) {
             alert("Success");
             console.log(data);
-            updateTable(data);
+            updateTable(data, request.getResponseHeader("Location"));
         },
         error: function (error) {
             alert("Error");
@@ -137,11 +137,51 @@ function sendRequest() {
     });
 }
 
-function updateTable(data) {
-    // let parsedData = JSON.parse(data);
+function getBlobInfo() {
+    const blobId = $(".blob-info").val();
+
+    $.ajax(`https://jsonblob.com/api/jsonBlob/${blobId}`, {
+        method: "GET",
+        headers: {
+            Accept: "application/json",
+            "Content-Type": "application/json"
+        },
+        success: function (data) {
+            alert("Success");
+            console.log(data);
+            showBlobResponse(data);
+        },
+        error: function (error) {
+            alert("Toks blobas neegzistuoja");
+            console.log(error);
+        }
+    });
+}
+
+function addBlobToList(location) {
+    let endpointSplit= location.split("/");
+    let blobId = endpointSplit[endpointSplit.length - 1];
+    $(".blob-list").append("<li>" + blobId + "</li>");
+}
+
+function updateTable(data, location) {
+    addBlobToList(location);
     let parsedData = data;
     let table = $(".server-response-table > tbody");
     let tableElementCount = $(".server-response-table > tbody > tr").length;
+
+    parsedData.people.forEach(element => {
+        table.append("<tr><td>" + tableElementCount + "</td><td>" + element + "</td></tr>");
+        tableElementCount++;
+    });
+}
+
+function showBlobResponse(data) {
+    // let parsedData = JSON.parse(data);
+    let parsedData = data;
+    let table = $(".blob-response-table > tbody");
+    let tableElementCount = 1;
+    table.children().not(':first').remove();
 
     parsedData.people.forEach(element => {
         table.append("<tr><td>" + tableElementCount + "</td><td>" + element + "</td></tr>");
